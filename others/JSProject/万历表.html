@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万历表</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+#calendar {
+    width: 920px;
+    margin: 50px auto;
+}
+table {
+    width: 210px;
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+}
+table thead {
+    background-color: #C6C6C6;
+}
+table th,td {
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+/* div[class$="line"] table:last-of-type {
+    margin-right: 0;
+    margin-bottom: 30px;
+} */
+    </style>
+</head>
+<body>
+<!-- HTML 结构 -->
+<div id="calendar"></div>
+<script>
+// JS 行为
+// 输入当前年份，默认是 2022 年
+let y = parseInt(prompt('请输入当前年份:',2022));
+// console.log(y);
+// 获得 calendar 元素
+let calendar = document.querySelector('#calendar');
+let html = '';
+for (var m = 0; m < 12; m++) {
+    // 得到当前的月份的天数
+    let days = new Date(y, m+1, 0).getDate();
+    // 得到当前月份所在的星期
+    let firstDay = new Date(y, m+1).getDay();  
+    console.log("第"+ (m+1) + "月有" + days + "天" + "第一天是星期" + firstDay);
+    html += `
+    <div class="first-line">
+    <table cellspacing="0">
+        <thead>
+            <th colspan="7">${y}年${m+1}月</th>
+        </thead>`;
+    html += `<tbody>
+                <tr>
+                    <td>日</td>
+                    <td>一</td>
+                    <td>二</td>
+                    <td>三</td>
+                    <td>四</td>
+                    <td>五</td>
+                    <td>六</td>
+                </tr>`;
+    let lines = Math.ceil((days + firstDay) / 7);       // 这里注意一定要加上 firstday 进行判断
+    // index 用来记录天数
+    let index = 1;
+    for(var i = 0; i < lines; i++) {
+        html += `<tr>`;
+        // flag 用来判断记录天数是否已经超出本月天数，false: 未超出; true: 超出 
+        var flag = false;
+        for(var j = 0; j < 7; j++) {
+            if(i == 0 && j < firstDay) {
+                html += `<td></td>`;
+            } else {
+                if (index > days) {
+                    flag = true;
+                    break;
+                } 
+                html += `<td>${index++}</td>`;
+            }
+        }
+        
+        html += `</tr>`;
+        if(flag) break;
+    }
+
+    html += `
+    </tbody>
+        </table>   
+</div>`;
+}
+    calendar.innerHTML = html;
+</script>
+</body>
+</html>

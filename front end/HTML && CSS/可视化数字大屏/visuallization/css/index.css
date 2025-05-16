@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "eletron";
+  src: url("../font/DS-DIGIT.TTF");
+}
+li {
+  list-style: none;
+}
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 48px !important;
+  }
+}
+@media screen and (min-width: 1980px) {
+  html {
+    font-size: 80px !important;
+  }
+}
+body {
+  background: url("../images/bg.jpg") no-repeat top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body .header {
+  position: relative;
+  height: 1.25rem;
+  background: url("../images/head_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+body .header h1 {
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.4375rem;
+}
+body .header .show-time {
+  position: absolute;
+  height: 0.4688rem;
+  line-height: 0.4688rem;
+  width: 3.9rem;
+  right: 0;
+  top: 0.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.2031rem;
+}
+body .main-panel {
+  display: flex;
+  margin: 0 auto;
+  padding: 0.1563rem;
+  width: 20rem;
+  height: 4.6875rem;
+  min-width: 16rem;
+  max-width: 30rem;
+}
+body .main-panel .column {
+  flex: 3;
+}
+body .main-panel .column:nth-child(2) {
+  flex: 4;
+  margin: 0 0.1563rem 0.2344rem;
+}
+body .main-panel .panel {
+  position: relative;
+  height: 3.75rem;
+  padding: 0 0.25rem 0.625rem;
+  margin-bottom: 0.1563rem;
+  background: url("../images/line(1).png") rgba(255, 255, 255, 0.04);
+}
+body .main-panel .panel::before,
+body .main-panel .panel::after {
+  top: 0;
+  position: absolute;
+  width: 0.1563rem;
+  height: 0.1563rem;
+  border-top: 0.0313rem solid #02a7b5;
+  content: "";
+}
+body .main-panel .panel::before {
+  left: 0;
+  border-left: 0.0313rem solid #02a6b5;
+}
+body .main-panel .panel::after {
+  right: 0;
+  border-right: 0.0313rem solid #02a6b5;
+}
+body .main-panel .panel .panel-footer {
+  position: absolute;
+  bottom: 0.1563rem;
+  left: 0;
+  width: 100%;
+}
+body .main-panel .panel .panel-footer::before,
+body .main-panel .panel .panel-footer::after {
+  top: 0;
+  position: absolute;
+  width: 0.1563rem;
+  height: 0.1563rem;
+  border-bottom: 0.0313rem solid #02a7b5;
+  content: "";
+}
+body .main-panel .panel .panel-footer::before {
+  left: 0;
+  border-left: 0.0313rem solid #02a6b5;
+}
+body .main-panel .panel .panel-footer::after {
+  right: 0;
+  border-right: 0.0313rem solid #02a6b5;
+}
+body .main-panel .panel h2 {
+  color: #fff;
+  line-height: 0.3906rem;
+  height: 0.3906rem;
+  text-align: center;
+  font-size: 0.25rem;
+  font-weight: 400;
+}
+body .main-panel .panel h2 a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.1563rem;
+}
+body .main-panel .panel .chart {
+  margin-top: 0.0781rem;
+  height: 3rem;
+}
+.no {
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 0.1563rem 0.1563rem 0;
+  border-radius: 0.0781rem;
+}
+.no .no-hd {
+  position: relative;
+}
+.no .no-hd:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.3125rem;
+  height: 0.1563rem;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+.no .no-hd:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.3125rem;
+  height: 0.1563rem;
+  border-bottom: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+}
+.no .no-hd ul {
+  display: flex;
+  border: 1px dotted #02a6b5;
+}
+.no .no-hd ul li {
+  flex: 1;
+  line-height: 1.25rem;
+  font-size: 1.0938rem;
+  color: #fae697;
+  text-align: center;
+  font-family: "eletron";
+}
+.no .no-hd ul li:nth-child(1) {
+  position: relative;
+}
+.no .no-hd ul li:nth-child(1):after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 1px;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.no .no-bd ul {
+  display: flex;
+}
+.no .no-bd ul li {
+  flex: 1;
+  height: 0.4688rem;
+  line-height: 0.4688rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.25rem;
+}
+.map {
+  position: relative;
+  margin-top: 0.1563rem;
+  height: 9.5rem;
+}
+.map .map-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5.4688rem;
+  width: 5.4688rem;
+  transform: translate(-50%, -50%);
+  background: url("../images/map.png") no-repeat;
+  background-size: contain;
+  opacity: 0.6;
+}
+.map .map-round {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 6.6rem;
+  width: 6.6rem;
+  transform: translate(-50%, -50%);
+  background: url("../images/lbx.png") no-repeat;
+  background-size: contain;
+  animation: rotate1 15s linear infinite;
+  opacity: 0.6;
+}
+.map .map-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5.9rem;
+  width: 5.9rem;
+  background: url("../images/jt.png") no-repeat;
+  background-size: contain;
+  animation: rotate1 15s linear infinite reverse;
+  opacity: 0.6;
+}
+.map .chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
