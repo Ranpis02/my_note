@@ -59,10 +59,12 @@ a[0] = 1;	// [1, 未知, 未知, 未知]
 void insert(string str) {
     int _size = str.size();
     char* ch = new char[_size + 1];
-    strcpy_s(ch, _size + 1, str.c_str());	// 引入头文件 <cstring>, _size + 1 的目的是保留一个 '\'
+    strcpy_s(ch, _size + 1, str.c_str());	// 引入头文件 <cstring>, _size + 1 的目的是保留一个 '\0'
     cout << ch << endl;
 }
 ```
+
+> `c_str()` 会返回一个
 
 
 
@@ -213,8 +215,6 @@ int main() {
 
 
 
-
-
 ### 2.3.3 指针所占内存空间
 
 提问：指针也是种数据类型，那么这种数据类型占用多少内存空间？
@@ -225,7 +225,6 @@ int main() {
 int main() {
 
 	int a = 10;
-
 	int * p;
 	p = &a; //指针指向数据a的地址
 
